@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clubs_in_BITDurg</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" media="screen and (max-width: 1100px)" href="{% static 'css/phone.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <a href="{% url 'club_list' %}"><img src="{% static 'images/BITLOGO1.png' %}" alt="bitdurg_logo"/></a>
+    </div>
+    <ul>
+      <li class="item"><a href="#home">Home</a></li>
+      <li class="item"><a href="#about">About</a></li>
+      <li class="item"><a href="#maintainer-section">Maintainers</a></li>
+      <li class="item"><a href="#contact">ContactUs</a></li>
+    </ul>
+
+      <div id="logo1">
+        <img src="{% static 'images/instagram.png' %}" alt="instagram"/>
+      </div>
+      <div id="logo2">
+        <img src="{% static 'images/linkedin.png' %}"  alt="linkedin"/>
+      </div>
+      <div id="logo3">
+        <img src="{% static 'images/twitter.png' %}"  alt="twitter"/>
+      </div>
+  </nav>
+
+  <section id="home">
+    <h1>Welcome to BITDClubs</h1>
+    <button class="btn"><a href="#Clubs_sec">See Clubs</a></button>
+  </section>
+
+  <section class="about-page" id="about">
+    <img class="left-bottom-1-icon" alt="" src="{% static 'images/left-bottom.png' %}"/><img class="right-top-1-icon" alt="" src="{% static 'images/right-top.png' %}"/>
+    <div class="text" id="text">
+        <div class="text-about-container">
+          <b class="about">About</b>
+          <p class="hackclubbitdurg-is-a-developer">
+            <b class="hackclubbitdurg">HackClubBitDurg</b
+            ><span>
+              is a developer-centric community with our core values aligning
+              with diversity and inclusivity in Tech and related domains. We aim
+              at creating a culture that promotes learning in collaboration and
+              growth by implementation. The community welcomes all - to
+              contribute, participate, network, and most importantly have fun
+              while embarking on this exciting journey of personal growth.</span
+            >
+          </p>
+          <p class="hackclubbitdurg-is-a-developer"><span>&nbsp;</span></p>
+          <p class="hackclubbitdurg-is-a-developer">
+            <b class="hackclubbitdurg">BITDClubs</b><span>
+              is a platform that provides details about the clubs and
+              communities on the campus and establishes a quick communication
+              channel between the students and the organizers. The site gives
+              you complete information about the club, team structure, upcoming
+              events, past-events,etc.</span>
+          </p>
+          <p class="the-project-is-live-on-github">
+            <br>
+            <span>The project is live on </span
+            ><b class="hackclubbitdurg"><a href="https://github.com/" class="github-link">GitHub</a></b><span class="hackclubbitdurg">
+              you can check it out, raise issues or contribute by solving
+              current ones!! Contributions in the form of code, content, design,
+              and creativity are most welcome. You are just one PR away from
+              making this initiative a part of your work experience!!</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Clubs_sec">
+        <h1 class="h-primary center">Clubs</h1>
+        {% for club in club_list %}
+        <div class="Clubs">
+            <div id="box">
+                <a href="{% url 'description' club_name=club.name %}"><img src="{{ club.display_picture.url }}" alt="Logo"></a>
+                <h2 class="h-secondary center">{{ club.name }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+{#            <div id="box">#}
+{##}
+{#              <img src="{%  static 'media/gdsc_display.png' %}" alt="gdscbitd.png">#}
+{#                <h2 class="h-secondary center">GDSC BITD</h2>#}
+{#            </div>#}
+{#            <div id="box">#}
+{#                <img src="{%  static 'media/ncc_display.png' %}" alt="ncc.png">#}
+{#                <h2 class="h-secondary center">NCC</h2>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="Clubs">#}
+{#            <div id="box">#}
+{#                <img src="{%  static 'media/technohub_display.png' %}" alt="technohub.png">#}
+{#                <h2 class="h-secondary center">TechnoHub</h2>#}
+{#            </div>#}
+{#            <div id="box">#}
+{#                <img src="{%  static 'media/vista_display.png' %}" alt="Vista blue (1).png">#}
+{#                <h2 class="h-secondary center">Vista</h2>#}
+{#            </div>#}
+{#            <div id="box">#}
+{#                <img src="{%  static 'media/quiz_display.png' %}" alt="quizbizz.png">#}
+{#                <h2 class="h-secondary center">Quiz bizz</h2>#}
+{#            </div>#}
+{#        </div>#}
+    </section>
+
+  <section class="end-section">
+    <div id="maintainer-section">
+      <h1 class="h-primary center">Maintainers</h1>
+      <div class="maintainers-div">
+        <a href="https://github.com/poorvadiwan"><img class="maintainers-id" src="Snapchat-1322528261-01 (1).jpg" /></a>
+      </div>
+    </div>
+
+    <div id="contact">
+      <h1 class="h-primary center">Contact Us</h1>
+      <div id="contact-box">
+        <form action="" class="form-box">
+          <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="email" name="name" id="email" placeholder="Enter your email">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message: </label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <br>
+            <div class="send">
+              <button class="btn-send"><a href="">Send</a></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+      <div class="center">
+        Copyright &copy;
+      </div>
+    </footer>
+</body>
+
+</html>
