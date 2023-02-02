@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navbar">
+    <nav id="navbar">
+      <div id="logo">
+          <a href="{% url 'club_list' %}"><img src="{% static 'images/BITLOGO1.png' %}" alt="bitdurg_logo"/></a>
+      </div>
+      <ul>
+        <li class="item"><a href="{% url 'club_list' %}">Home</a></li>
+        <li class="item"><a href="#text-content">About</a></li>
+        <li class="item"><a href="#team-members">Team</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="main-body">
+    <img src="{{ club.header_image.url }}" class="image-up" />
+    <div id="text-content">
+      <p class="about">{{ club.about }}</p>
+    </div>
+    <div id="team-members">
+      <b class="heading">Team Members</b>
+        <ul>
+            {% for member in club.teammember_set.all %}
+          <li>{{ member.member_name }} - {{ member.designation }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+  </div>
+</body>
+
+</html>
