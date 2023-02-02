@@ -86,6 +86,17 @@ DATABASES = {
         'PORT':'3306',
     }
 }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sql12595202',
+#         'USER': 'sql12595202',
+#         'PASSWORD': 'WLDl1qqwsW',
+#         'HOST': "sql12.freesqldatabase.com",
+#         'PORT':'3306',
+#     }
+# }
 
 
 # Password validation
