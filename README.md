@@ -5,16 +5,16 @@
 2. To check whether MySQL is installed properly or not, launch the MySQL command line client, and enter your password, if the window opens successfully, you are good to go.
 </br></br>
 3. Once, you're done with checking your MySQL installation, run command:
-<br>
-```>>> CREATE DATABASE bitclubs;```
-<br><br>
+```
+>>> CREATE DATABASE bitclubs;
+```
 It's mandatory to run the commands as given, and now it's time to set up the project into your local system. 
 </br></br>
 
 4. Fork the project into your profile, and then clone it into your local system.
 </br></br>
 5. After you're done installing the project, move inside the **CommunityProject** directory, and open the **settings.py** file and locate this part in it:
-<br>
+
 ```
 DATABASES = {
     'default': {
