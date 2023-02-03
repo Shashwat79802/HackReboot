@@ -11,6 +11,7 @@ html{
 /* CSS Variables */
 :root{
     --navbar-height: 59px;
+    --font-buenard: "Buenard", sans-serif;
 }
 
 /* Navigation Bar */
@@ -296,6 +297,26 @@ body {
   font-family: var(--font-buenard);
 }
 
+.maintainers-id {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  padding: 30px;
+}
+
+.maintainers-div{
+  justify-content: center;
+  padding-left: 105px;
+  padding-right: 55px;
+}
+
+.maintainers-div a{
+  cursor: pointer;
+  color: white;
+  text-decoration:none;
+}
+
+
 /* Contact Section */
 
 #contact{
@@ -331,8 +352,8 @@ body {
     font-size: 1.1rem;
 } 
 
-#contact-box form{
-    width: 40%;
+#contact-box form-box{
+    width: 100%;
 }
 
 #contact-box label{
@@ -342,6 +363,23 @@ body {
 
 .contact h1{
   font-family: var(--font-buenard);
+}
+
+.btn-send{
+  padding: 4px 4px;
+  border: 2.5px solid rgba(255,255,255,0.55);
+  box-shadow: 0 0 30px rgba(255,255,255,0.45);
+  background-color: #4DA6FF;
+  color: #E0E0E0;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+
+}
+
+.btn-send a{
+color: white;
+text-decoration:none;
 }
 
 footer{
@@ -389,11 +427,11 @@ footer{
 html, body {
   overflow-x:hidden 
 }
+
 @media screen and (max-width: 500px){
   
   /* Navigation */
-
-#navbar {
+  #navbar {
     justify-content: center;
     flex-direction: column;
 }
@@ -403,23 +441,23 @@ html, body {
     padding: 0px 7px;
     padding-bottom: 8px;
 }
-  
+
 /* Home section */
-  
+
 #home{
-    height: 370px; 
+    height: 370px;
     padding: 3px 5px;
 }
 
 #home::before{
     height: 500px;
     width: 352px;
-     
+
      left: 0;
-     
+
     border-radius: 0 0 65% 55%/ 0 0 95% 72%;
     transform: scaleX(1.15);
-     
+
 }
 
 #home p{
@@ -431,16 +469,16 @@ html, body {
     flex-direction: column;
 }
 
-#About.box { 
+#About.box {
     padding: 14px;
-    margin: 2px 0px; 
+    margin: 2px 0px;
     margin-bottom: 20px;
 }
 
 /* Clubs section*/
-  
+
 #Clubs_sec{
-  
+
   justify-content: center;
 }
 .Clubs #box{
@@ -448,7 +486,7 @@ html, body {
   flex-direction: column;
 }
 
-  
+
 /* Footer */
 
 /* Utility classes */
@@ -461,6 +499,6 @@ html, body {
     flex-direction: column;
 }
 html, body {
-  overflow-x:hidden 
+  overflow-x:hidden
 }
 }
